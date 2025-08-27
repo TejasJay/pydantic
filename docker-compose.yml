@@ -1,0 +1,17 @@
+name: netflixdb
+services:
+  #----------------------------------------------------------------------------
+  # MySQL Container
+  # https://hub.docker.com/_/mysql
+  # Commands:
+  #   mysql -u test -p netflixdb
+  #----------------------------------------------------------------------------
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: mysql
+      MYSQL_ROOT_PASSWORD: Test123
+      MYSQL_DATABASE: netflixdb
+    ports:
+      - "3306:3306"
