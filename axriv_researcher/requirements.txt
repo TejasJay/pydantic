@@ -1,0 +1,6 @@
+pydantic
+pydantic-ai
+arxiv
+python-dotenv
+pypdf
+gradio
