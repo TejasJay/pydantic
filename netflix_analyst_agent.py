@@ -190,7 +190,7 @@ async def main():
         print(result.output.answer)
 
         print('\n')
-        print('Complete Pydantic JSON Response:')
+        print('Complete Pydantic JSON:')
         output_dict = result.output.model_dump()
 
         print(json.dumps(output_dict, indent=4))
