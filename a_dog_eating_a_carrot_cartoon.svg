@@ -1,0 +1,50 @@
+<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="0" y="0" width="600" height="400" fill="#ADD8E6"/>
+
+  <!-- Ground -->
+  <rect x="0" y="250" width="600" height="150" fill="#90EE90"/>
+
+  <!-- Dog body -->
+  <ellipse cx="300" cy="280" rx="80" ry="60" fill="#8B4513"/>
+  <rect x="230" y="240" width="140" height="80" rx="40" ry="40" fill="#8B4513"/>
+
+  <!-- Dog head -->
+  <circle cx="370" cy="220" r="50" fill="#8B4513"/>
+
+  <!-- Dog snout -->
+  <ellipse cx="400" cy="230" rx="30" ry="20" fill="#F4A460"/>
+
+  <!-- Dog nose -->
+  <circle cx="400" cy="225" r="8" fill="#000000"/>
+
+  <!-- Dog eyes -->
+  <circle cx="355" cy="205" r="10" fill="#FFFFFF"/>
+  <circle cx="385" cy="205" r="10" fill="#FFFFFF"/>
+  <circle cx="355" cy="207" r="5" fill="#000000"/>
+  <circle cx="385" cy="207" r="5" fill="#000000"/>
+
+  <!-- Dog ears -->
+  <path d="M340 180 Q320 160 330 140 Q350 120 370 180 Z" fill="#8B4513"/>
+  <path d="M400 180 Q420 160 410 140 Q390 120 370 180 Z" fill="#8B4513"/>
+
+  <!-- Dog mouth (eating the carrot) -->
+  <path d="M390 240 Q400 250 410 240" stroke="#000000" stroke-width="2" fill="none"/>
+
+  <!-- Carrot -->
+  <path d="M410 240 Q430 220 450 250 C440 260 420 250 410 240 Z" fill="#FFA500"/>
+  <path d="M440 250 Q460 270 470 240 C460 230 440 240 440 250 Z" fill="#FFA500"/>
+  <path d="M450 225 L455 210 L460 225" stroke="#228B22" stroke-width="3" fill="none"/>
+  <path d="M455 220 L460 205 L465 220" stroke="#228B22" stroke-width="3" fill="none"/>
+
+  <!-- Dog front paws -->
+  <ellipse cx="260" cy="335" rx="20" ry="15" fill="#8B4513"/>
+  <ellipse cx="320" cy="335" rx="20" ry="15" fill="#8B4513"/>
+
+  <!-- Dog back paws (partially hidden) -->
+  <ellipse cx="220" cy="335" rx="20" ry="15" fill="#8B4513"/>
+  <ellipse cx="280" cy="335" rx="20" ry="15" fill="#8B4513"/>
+
+  <!-- Dog tail -->
+  <path d="M220 280 Q200 260 200 220 Q230 230 220 280 Z" fill="#8B4513"/>
+</svg>
