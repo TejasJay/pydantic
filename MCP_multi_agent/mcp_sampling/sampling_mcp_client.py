@@ -7,7 +7,7 @@ load_dotenv(override=True)
 
 server = MCPServerStdio(command='python3', args=['MCP_multi_agent/generate_svg.py'])
 
-# 1. Use a general-purpose model that supports function calling for the main agent.
+# 1. Use a general-purpose model that supports function calling for the main agent
 agent = Agent('google-gla:gemini-2.5-pro', toolsets=[server])
 
 
