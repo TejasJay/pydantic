@@ -21,7 +21,7 @@ password = 'mysql'
 database = 'netflixdb'
 
 # --- END OF CONFIGURATION ---
-
+#
 
 
 
