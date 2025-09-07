@@ -22,7 +22,6 @@ def agent_result_to_json(result) -> str:
         "usage": vars(result.usage) if getattr(result, "usage", None) else None,
         "messages": [],
     }
-
     # Extract structured message history (if available)
     for msg in getattr(result._state, "message_history", []):
         parts = []
@@ -38,9 +37,13 @@ def agent_result_to_json(result) -> str:
             "timestamp": getattr(msg, "timestamp", None).isoformat() if getattr(msg, "timestamp", None) else None,
             "parts": parts,
         })
+    print("\nFinal Output:")
+    print(data["final_output"])
+    print('\n')
 
-    import json
-    return json.dumps(data, indent=2, ensure_ascii=False)
+    return json.dumps(data, 
+                      indent=2, 
+                      ensure_ascii=False)
 
 
 
@@ -60,7 +63,6 @@ async def handle_elicitation(
 
     properties = params.requestedSchema["properties"]
     data = {}
-
     for field, info in properties.items():
         description = info.get("description", field)
 
@@ -100,6 +102,7 @@ restaurant_server = MCPServerStdio(
     elicitation_callback=handle_elicitation,
 )
 
+
 # --------------------------
 # Create agent
 # --------------------------
@@ -113,6 +116,7 @@ agent = Agent(
         "without adding or changing anything."
     ),
 )
+
 
 # --------------------------
 # Runner
