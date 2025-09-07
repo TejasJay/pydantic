@@ -11,6 +11,10 @@ from pydantic_ai.mcp import MCPServerStdio
 import json
 from pydantic_ai.agent import AgentRunResult
 
+
+# --------------------------
+# Helper Function for JSON
+# --------------------------
 def agent_result_to_json(result) -> str:
     """Convert AgentRunResult into a clean JSON string."""
     data = {
@@ -110,18 +114,14 @@ agent = Agent(
     ),
 )
 
-
 # --------------------------
 # Runner
 # --------------------------
 async def main():
     async with agent:
         result = await agent.run("Book me a table")
-
         print("\n--- JSON Result ---")
         print(agent_result_to_json(result))
-
-
 
 
 if __name__ == "__main__":
