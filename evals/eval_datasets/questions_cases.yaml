@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=questions_cases_schema.json
+cases:
+- name: Easy Question
+  inputs:
+    question: What is the capital of France?
+  metadata:
+    difficulty: easy
+    category: geography
+  expected_output:
+    answer: Paris
+    confidence: 0.9
+  evaluators:
+  - EqualsExpected
+- name: Challenging Question
+  inputs:
+    question: Which city is home to the Brandenburg Gate?
+  metadata:
+    difficulty: hard
+    category: landmarks
+  expected_output:
+    answer: Berlin
+    confidence: 0.95
+  evaluators:
+  - Equals: Berlin
