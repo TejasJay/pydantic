@@ -13,7 +13,7 @@ class ClientAndKey:
 
 
 joke_selection_agent = Agent(
-    'google-gla:gemini-1.5-flash',
+    'openai:gpt-4o',
     deps_type=ClientAndKey,  
     system_prompt=(
         'Use the `joke_factory` tool to generate some jokes on the given subject, '
@@ -21,7 +21,7 @@ joke_selection_agent = Agent(
     ),
 )
 joke_generation_agent = Agent(
-    'google-gla:gemini-1.5-flash',
+    'openai:gpt-4o',
     deps_type=ClientAndKey,  
     output_type=list[str],
     system_prompt=(
@@ -55,9 +55,10 @@ async def get_jokes(ctx: RunContext[ClientAndKey], count: int) -> str:
 async def main():
     async with httpx.AsyncClient() as client:
         deps = ClientAndKey(client, 'foobar')
-        result = await joke_selection_agent.run('Tell me a joke.', deps=deps)
+        result = await joke_selection_agent.run('Tell me a joke about colgate.', deps=deps)
         print(result.output)
         #> Did you hear about the toothpaste scandal? They called it Colgate.
+        print('\n')
         print(result.usage())  
         #> RunUsage(input_tokens=309, output_tokens=32, requests=4, tool_calls=2)
 
