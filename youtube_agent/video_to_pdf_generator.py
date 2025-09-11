@@ -342,8 +342,8 @@ def generate_video_notes(video_url: str, output_dir: str = "."):
 if __name__ == "__main__":
     multiprocessing.set_start_method('spawn', force=True)
 
-    TEST_VIDEO_URL = 'https://www.youtube.com/watch?v=zJrI7QAzzGQ'
-    OUTPUT_DIRECTORY = "./generated_notes" 
+    TEST_VIDEO_URL = 'https://www.youtube.com/watch?v=tURxphunUyk'
+    OUTPUT_DIRECTORY = "./youtube_agent/generated_notes" 
     
     if not os.path.exists(OUTPUT_DIRECTORY):
         os.makedirs(OUTPUT_DIRECTORY)
