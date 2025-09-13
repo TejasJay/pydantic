@@ -337,7 +337,6 @@ def generate_video_notes(video_url: str, output_dir: str = "."):
         shutil.rmtree(temp_dir)
         print("Cleanup complete.")
 
-# --- Main Execution Block ---
 
 if __name__ == "__main__":
     multiprocessing.set_start_method('spawn', force=True)
