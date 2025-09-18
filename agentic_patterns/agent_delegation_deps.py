@@ -60,7 +60,6 @@ async def main():
         #> Did you hear about the toothpaste scandal? They called it Colgate.
         print('\n')
         print(result.usage())  
-        #> RunUsage(input_tokens=309, output_tokens=32, requests=4, tool_calls=2)
 
 
 if __name__ == "__main__":
