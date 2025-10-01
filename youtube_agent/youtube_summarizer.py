@@ -33,7 +33,7 @@ class FinalAgentOutput(BaseModel):
 
 # --- Initialize the Agent ---
 agent = Agent(
-    model='google-gla:gemini-1.5-pro',
+    model='google-gla:gemini-2.5-pro',
     instructions=(
         "You are an intelligent YouTube video analysis assistant. Your workflow is precise and must be followed in order:\n\n"
         "1. **Fetch Transcript:** Your first and mandatory action is to use the `get_youtube_transcript` tool with the provided video URL to get the full text.\n\n"
@@ -106,7 +106,7 @@ def agent_answer(user_query):
 
 # --- Main Execution Block ---
 if __name__ == '__main__':
-    agent_answer(user_query= "https://www.youtube.com/watch?v=T5rodl0FWRQ&t=308s")
+    agent_answer(user_query= "https://www.youtube.com/watch?v=51zPdJRqgsA")
 
 
 
