@@ -6,5 +6,5 @@ import os
 load_dotenv(override=True)
 
 google_provider = GoogleProvider(api_key=os.getenv('GOOGLE_API_KEY'))
-MODEL = GoogleModel('gemini-1.5-flash', provider=google_provider)
+MODEL = GoogleModel('gemini-2.5-pro', provider=google_provider)
 

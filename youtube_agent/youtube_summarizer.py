@@ -68,26 +68,26 @@ def get_youtube_transcript(video_url: str) -> str:
         return f"Error fetching transcript: {e}"
 
 
-@agent.tool_plain()
-def create_pdf_report_from_video(video_url: str) -> str:
-    """
-    Processes a visually complex YouTube video to extract keyframes and transcript sections
-    and compiles them into a professional PDF report.
-    **Only use this tool if the transcript indicates the video contains diagrams, code, or slides.**
+# @agent.tool_plain()
+# def create_pdf_report_from_video(video_url: str) -> str:
+#     """
+#     Processes a visually complex YouTube video to extract keyframes and transcript sections
+#     and compiles them into a professional PDF report.
+#     **Only use this tool if the transcript indicates the video contains diagrams, code, or slides.**
 
-    Args:
-        video_url: The full YouTube video URL to process.
+#     Args:
+#         video_url: The full YouTube video URL to process.
 
-    Returns:
-        The absolute local filesystem path to the generated PDF file.
-    """
-    print(f"Starting PDF generation for visually complex video: {video_url}")
-    output_directory = "./youtube_agent/generated_notes"
-    if not os.path.exists(output_directory):
-        os.makedirs(output_directory)
+#     Returns:
+#         The absolute local filesystem path to the generated PDF file.
+#     """
+#     print(f"Starting PDF generation for visually complex video: {video_url}")
+#     output_directory = "./youtube_agent/generated_notes"
+#     if not os.path.exists(output_directory):
+#         os.makedirs(output_directory)
     
-    pdf_path = generate_video_notes(video_url=video_url, output_dir=output_directory)
-    return pdf_path
+#     pdf_path = generate_video_notes(video_url=video_url, output_dir=output_directory)
+#     return pdf_path
 
 
 def agent_answer(user_query):
