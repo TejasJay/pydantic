@@ -5,6 +5,7 @@ from typing import List, Optional
 from pydantic import BaseModel, Field
 from pydantic_ai import Agent
 import yt_dlp
+import subprocess
 
 # Import the function from your other module
 from video_to_pdf_generator import generate_video_notes
@@ -23,7 +24,7 @@ class TextSummaryOutput(BaseModel):
     title: str = Field(description="A concise and engaging title for the summary.")
     subject: str = Field(description="The main subject or topic of the video.")
     explanation: str = Field(description="A very detailed, non truncated, paragraph-based explanation of the video transcript.")
-    # full_text: str = Field(description="The complete non-truncated text extracted from the transcript")
+    full_text: str = Field(description="The complete non-truncated text extracted from the transcript")
 
 
 class FinalAgentOutput(BaseModel):
@@ -92,7 +93,12 @@ def get_youtube_transcript(video_url: str) -> str:
 
 def agent_answer(user_query):
     print(f"Running agent for query: '{user_query}'")
+
+    # Clear yt-dlp cache
+    subprocess.run(["yt-dlp", "--rm-cache-dir"], check=False)
+
     result = agent.run_sync(user_query)
+
     print('\n----- AGENT RESULTS -----')
     if result.output.text_summary:
         print("\n--- Text Summary ---")
